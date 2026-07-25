@@ -1,7 +1,25 @@
 aid: concept
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/concept.png
 name: Concept
-description: Concept is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: 'Concept is an unresolved company name harvested from the Andreessen Horowitz
+  (a16z) public investment list, where it appears alphabetically between Compound and
+  Convex as a bare list item with no linked website, category, stage, or description.
+  No authoritative public source tying the name "Concept" to a specific company, domain,
+  or product could be verified during enrichment, so this record remains an identity
+  stub with no API surface, no developer portal, and no artifacts. It is retained as
+  a lead so a future enrichment pass with working search can resolve the company behind
+  the a16z listing and, if it publishes APIs, profile them properly.'
 url: https://raw.githubusercontent.com/api-evangelist/concept/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +27,45 @@ x-backed-by:
 - a16z
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-identity-status: unresolved
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Venture Backed
+- a16z
+- Portfolio Company
+- Unresolved
+- Lead
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment-attempt:
+  date: '2026-07-20'
+  outcome: completed-unresolved-identity
+  pass: local-v1
+  notes: 'Second pass (2026-07-20) ran with WORKING WebSearch + WebFetch (the prior
+    attempt was blocked by WebSearch quota). Company still could not be identified. a16z''s
+    public investment list (https://a16z.com/investment-list/) still renders "Concept" as
+    a plain list item with no href, category, or description, alphabetically between Convey
+    and Convex; the a16z /portfolio/ page does not list it. WebSearch queries ("a16z
+    portfolio Concept", "Concept AI Andreessen Horowitz", "Concept a16z speedrun internal
+    AI apps builder") returned no source tying the bare name "Concept" to a specific
+    company, domain, or product. Candidate domains previously probed: concept.com (200 -
+    Concept Brands, unrelated consumer-brand studio), concept.ai (parked), concept.app (for
+    sale), getconcept.com (HugeDomains parking), useconcept.com (200 - unrelated French
+    ergonomics consultancy), conceptai.com (200, no content), concept.so/concept.inc (no
+    DNS). github.com/orgs/concept has 0 public repos. One plausible but UNVERIFIED
+    candidate remains concept.dev (an AI internal-app builder) - it carries no investor
+    disclosure and nothing links it to the a16z listing, so it was again deliberately NOT
+    wired in. No API surface exists to enrich; record stays an identity stub. Next pass:
+    confirm the a16z entity before writing any artifacts.'
+x-enrichment:
+  date: '2026-07-20'
+  status: nochange
+  artifacts_added: 0
+  pass: local-v1
